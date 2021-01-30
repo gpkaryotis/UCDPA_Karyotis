@@ -83,7 +83,7 @@ def plot_complexity_insights(table_to_print,pd_crosstab, save_p = False):
     if(save_p):
       plt.savefig("Econ_Complexity_vs_Mean_Num_Total_Deaths.png")
 
-    plt.show(block=False);
+    plt.show(block=False)
 
     fig4 = plt.figure(4)
     plt.style.use("seaborn-darkgrid")
@@ -99,7 +99,7 @@ def plot_complexity_insights(table_to_print,pd_crosstab, save_p = False):
     if(save_p):
       plt.savefig("Econ_Complexity_and_Continent_vs_Mean_Num_Total_Deaths.png")
 
-    plt.show(block=False);
+    plt.show(block=False)
 
 def plot_tseries(dt_covid_gr, dt_covid_irl, save_p = False):
     #Some Lists for holding Greece's and Ireland's Lock Down Start Dates:
@@ -193,7 +193,7 @@ def read_csv_return_pd(fname, is_local = True, debug = False):
         print(local_data.info())
         print(local_data.columns)
 
-    return local_data;
+    return local_data
 
 def read_json_online(url_name):
     """
@@ -205,13 +205,13 @@ def read_json_online(url_name):
     print(local_data.info())
     print(local_data.columns)
 
-    return local_data;
+    return local_data
 
 #Define Global Variables
 #The following 3 gobal variables control some script behaviour
 create_plots = True
 save_plots   = False
-debug_msg    = False
+debug_msg    = True
 
 #Define a number of lists which are used to order DataFrames and Select columns on DataFrames
 category_order = ['Oceania','Asia', 'Africa', 'South America', 'North America', 'Europe']
@@ -236,7 +236,7 @@ covid_dt_last_date = "2021-01-29"
 print("Data Analyis First Step: Read the Data Sets, and create the necessary Pandas DataFrames.")
 #Create the dt_covid DataFrame by reading the "owid-covid-data.csv"
 #Retrieved here: https://covid.ourworldindata.org/data/
-dt_covid = read_csv_return_pd("owid-covid-data.csv",False,debug_msg)
+dt_covid = read_csv_return_pd("owid-covid-data.csv",True,debug_msg)
 
 #Keep specific columns from the dt_covid DataFrame
 dt_covid = dt_covid[countries_lst+covid_lst]
