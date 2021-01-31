@@ -19,9 +19,7 @@ iii) Covid-19 Pandemic phases/waves in Ireland and Greece.
 
 #Import the necessary Packages
 import pandas as pd
-from pandas.io.json import json_normalize
-import requests
-import numpy   as np
+import numpy  as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
@@ -236,7 +234,7 @@ covid_dt_last_date = "2021-01-29"
 print("Data Analyis First Step: Read the Data Sets, and create the necessary Pandas DataFrames.")
 #Create the dt_covid DataFrame by reading the "owid-covid-data.csv"
 #Retrieved here: https://covid.ourworldindata.org/data/
-dt_covid = read_csv_return_pd("owid-covid-data.csv",True,debug_msg)
+dt_covid = read_csv_return_pd("owid-covid-data.csv",False,debug_msg)
 
 #Keep specific columns from the dt_covid DataFrame
 dt_covid = dt_covid[countries_lst+covid_lst]
